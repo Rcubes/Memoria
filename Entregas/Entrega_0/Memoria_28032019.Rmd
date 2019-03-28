@@ -1,0 +1,94 @@
+---
+title: "Resumen de Papers"
+author: "Alfonso Tobar"
+date: '2018-03-28'
+output:
+  pdf_document: default
+  html_notebook: default
+subtitle: Entrega 0
+---
+
+### Aplicación de Extreme Learning Machine, Subestructuración y Remuestreo en el Contexto de Análisis Estructural Difuso
+
+Lo encontré un tema súper interesante. Muy parecido a lo que ya estaba haciendo con mi anterior tema y creo que mucha de los códigos desarrollados serían de mucha utilidad.
+
+> #### Cosas que me llamaron la atención:
+
++ Extreme Learning Machine es un tipo de Red Neuronal que al paecer aprendería de manera más rápida.
++ La manera en la que se aborda es como una herramienta de aproximación. No habría validación?
++ Aplica Subestructuración que al parecer sería una manera de generar más samples de entrenamiento.
++ Me da la impresión que usando Montecarlos es posible generar suficientes muestras de entrenamiento para la red.
+
+> #### Dudas:
+
++ Se está entrenando o se está usando como una técnica numérica. Me complica la ausencia de un algoritmo de Optimización.
++ No entendí lo que eran las variables difusas, no sé si puede trasladarse esto al problema de Incertidumbre o Investigar acerca de esto.
+
+### Background Information of Deep Learning for Structural Engineering. (Lee 2018)
+
+Me pareció que ese paper tomaba la mayoría del estado del arte que hoy en Redes Neuronales se está usando.
+Introduce el concepto de Deep Learning, que es algo que no se menciona en los otros papers y se realiza una comparación de diversos métodos para el cálculo de desplazamientos en un enrejado, muy similar al problema que buscábamos resolver.
+
+> #### Cosas que me llamaron la atención:
+
++ Utiliza redes neuronales en softwares que manejo y que son lo más usado hoy en día: Tensorflow, Keras y Theanos.
++ Utiliza distintos métodos de optimización Stocastic, Gradient Descent y Adam son los más usadosen problemas de Data. Utiliza 2 o 3 más que no conocía y que al parecer también darían buenos resultados.
++ Utiliza Feedforward and Back-Propagation Networks, demostrando la diferencia y mayor eficiencia de las BP.
++ Utiliza distintas Funciones de Activación. Normalmente en el resto de los papers se usa la funcion sigmoidea, que hoy por hoy es sólo una de las tantas que se pueden usar. Siendo la más conocida reLU.
+
+Según lo que entiendo dependiendo del problema y la dimensionalidad de este. Distintas funciones de activación, distintas algoritmos de optimización y distintas configuraciones de redes podrían ayudar a acelerar el proceso de entrenamiento dependiendo de la configuración de la estructura.
+
+> #### Dudas:
+
++ Se nombra como problema de una red el no considerar propiedades físicas de la estructura. La verdad es que no entiendo muy bien cuáles son los valores de entrada para los distintas configuraciones ya que no se indaga del proceso de entrenamiento.
++ Se mencionan técnicas para evitar overfitting como regularizaciones y dropouts. No sé si realmente se aplican.
++ Esto es algo que aún no entiendo, porque aplica distintas configuraciones, pero no se explica de dónde salen. La que más me llamó la atencion es una 10-20-18. 18 outputs para 10 incógnitas, lo cual no entendí.
++ Se introduce mini-batch el cual no conozco.
+
+### Multivariate predictions of local reduced-order-model errors and dimensions. (Moosavi 2018)
+
+> #### Cosas que me llamaron la atención:
+
++ Se introduce el Proper Orthogonal Decomposition. No sé si entendí muy bien, pero sería algo parecido a la subestructuración para disminuir el orden de la estructura. No recuerdo si este paper lo decía pero sería equivalente al PCA que es una manera de reducir dimensionalidad en modelamiento y también menciona a Karhunen-Love que fue algo que usamos.
++ Introduce los GP (Procesos Gaussianos) al parecer sería algo similar a las redes.
+
+> #### Dudas:
+
++ Nunca entendí el problema a resolver.
+
+> #### Estos fueron los papers que más me gustaron ya que hablan de cosas que manejo un poco más. Hasta acá mi propuesta sería continuar el problema de ELM y variables difusas, pero quizás aplicando ANN para su cálculo.
+
+> #### A continuación se habla principalmente de problemas de Confiabilidad que es algo que no manejo mucho.
+
+### Structural reliability analyis of elastic-plastic structures using neural networks and Monte Carlo simulation
+
+Este Paper está enfocado en el uso de NN para la predicción del factor de carga crítico para luego calcular la probabilidad de falla.
+
+Principalmente estos papers buscan disminuir la carga computacional del cálculo utilizando técnicas de ANN.
+
+> #### Dudas:
+
+Se utiliza BP Network con un Hidden layer. No explica muy bien ni la configuración ni el proceso de entrenamiento, sólo el uso de funcion sigmoidea como función de activación
+
+### Performance of global metamodeling techniques in solution of structural reliability problems
+
+Este paper busca alternativas para los FORM, de manera de reducir tiempos y cargas computacionales.
+Utiliza feedforward nets para abordar el problema de confiabilidad.
+
+### Hurtado 2002
+
+Utilización de MLP y RBF (averiguando, esto no sería necesariamente una red neuronal, sino un modelo SVM) como alternativa al MEF.
+
+### A hybrid RNN-GPOD surrogate model for real-time settlement predictions in mechanised tunnelling. (Cao)
+
+> #### Cosas que me llamaron la atención:
+
++ Es el único que propone otro tipo de Red, las RNN. Este tipomde redes serían buenas para usar una variable temporal y permiten la extrapolación. Yo las he visto para modelos de textos que usando lo escrito son capaz de predecir o sugerir elementos que pueden ir a continuación. Como en Whatsapp.
++ Se introduce el uso de POD como técnica para reducir dimensionalidad. (No entiendo muy bien cómo).
++ Explica que POD es sólo el nombre asociado al campo para PCA (Principal Component Analysis), SVD (Singular Value Decomposition) y KLD (Karhunen Love Decomposition).
+
+> #### Dudas:
+
++ Lamentablemente esta aplicada en un campo geotécnico de tuneles que es algo que no manejo para nada. 
+
+
